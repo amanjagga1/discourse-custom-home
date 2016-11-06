@@ -1,14 +1,13 @@
 export default Ember.Component.extend({
 	didInsertElement() {
 	  this._super(...arguments);
-	  Ember.run.scheduleOnce('afterRender', this, function() {
-	    var home =$('#main-outlet')[0];
+	  Ember.$(window).on("load", function() {
+  		var home =$('#main-outlet')[0];
 	    home.className += " homePage";
 	    startTimer(5);
 	  });
 	},
 	willDestroyElement() {
-		console.log("destroying view");
 		var home = $('#main-outlet')[0];
 	    home.className = " wrap";
 	}

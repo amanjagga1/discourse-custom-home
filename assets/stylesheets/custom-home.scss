@@ -58,6 +58,11 @@
 .homePage #title {
 	animation: rotateWordsSecond 4s ease-in;
 	webkit-animation: rotateWordsSecond 4s ease-in;
+	display: block;
+}
+
+#title {
+	display: none;
 }
 
 #perspective {
