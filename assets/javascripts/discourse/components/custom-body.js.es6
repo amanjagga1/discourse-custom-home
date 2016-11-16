@@ -13,9 +13,8 @@ export default Ember.Component.extend({
 	}
 });
 function startTimer(remainingTime) {
-        console.log('inside timer');
 		if (remainingTime < 0) {
-			//window.location.pathname = Discourse.getURL("/");
+			window.location.pathname = Discourse.getURL("/");
 			return;
 		}
 	$("#time")[0].innerHTML = '(' + remainingTime + ')';
