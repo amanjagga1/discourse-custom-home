@@ -4,7 +4,7 @@ export default Ember.Component.extend({
 	  Ember.$(window).on("load", function() {
   		var home =$('#main-outlet')[0];
 	    home.className += " homePage";
-	    startTimer(5);
+	    startTimer(34);
 	  });
 	},
 	willDestroyElement() {
@@ -13,10 +13,14 @@ export default Ember.Component.extend({
 	}
 });
 function startTimer(remainingTime) {
-		if (remainingTime < 0) {
-			window.location.pathname = Discourse.getURL("/");
-			return;
-		}
+	if (remainingTime < 0) {
+		window.location.pathname = Discourse.getURL("/");
+		return;
+	}
+	if (remainingTime < 6) {
+		$('#firstScreen')[0].style= "display:none";
+		$('#secondScreen')[0].style= "display:block";
+	}
 	$("#time")[0].innerHTML = '(' + remainingTime + ')';
 	setTimeout(function(){ startTimer(remainingTime-1) }, 1000);
 };
