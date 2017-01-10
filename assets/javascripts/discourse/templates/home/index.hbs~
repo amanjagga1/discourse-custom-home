@@ -1,4 +1,0 @@
-{{#custom-page}}
-	
-  {{outlet}}
-{{/custom-page}}
